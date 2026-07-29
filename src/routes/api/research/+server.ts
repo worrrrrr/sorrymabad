@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
+import type { RequestHandler, RequestEvent } from './$types';
 import { UserIntentSchema, PipelineResultSchema } from '$lib/types/pipeline';
 import { createIntentFromQuery, routeIntent } from '$lib/orchestrator/router';
 import { buildDAG, getExecutionOrder } from '$lib/orchestrator/planner';
@@ -133,6 +133,20 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 
 		// Validate result schema
 		const validatedResult = PipelineResultSchema.parse(result);
+
+		// Store in pipeline cache for later retrieval
+		try {
+			await fetch('/api/pipeline', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					pipelineId: validatedResult.pipelineId,
+					result: validatedResult
+				})
+			});
+		} catch (cacheError) {
+			console.warn('Failed to cache pipeline result:', cacheError);
+		}
 
 		return json(validatedResult, { status: 200 });
 	} catch (error) {
