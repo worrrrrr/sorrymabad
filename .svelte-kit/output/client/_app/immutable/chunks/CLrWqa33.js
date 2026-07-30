@@ -1,0 +1,1 @@
+import{am as n,h as a}from"./VxMAg-e4.js";function c(s,e,t){var i=s==null?"":""+s;return i===""?null:i}function A(s,e){return s==null?null:String(s)}function o(s,e,t,i,f,u){var l=s[n];if(a||l!==t||l===void 0){var r=c(t);(!a||r!==s.getAttribute("class"))&&(r==null?s.removeAttribute("class"):e?s.className=r:s.setAttribute("class",r)),s[n]=t}return u}export{o as s,A as t};

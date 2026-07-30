@@ -275,14 +275,14 @@
 
 					{#if activeTab === 'results'}
 						<div class="space-y-6">
-							{#for const [key, value] of Object.entries(result.results)}
+							{#each Object.entries(result.results) as [key, value]}
 								<div class="bg-slate-900/50 border border-slate-700 rounded-xl p-6">
 									<h4 class="text-lg font-semibold text-white mb-4 capitalize">{key}</h4>
 									<pre class="bg-slate-950 rounded-lg p-4 overflow-x-auto text-slate-300 text-sm font-mono max-h-96 overflow-y-auto">
 {JSON.stringify(value, null, 2)}
 									</pre>
 								</div>
-							{/for}
+							{/each}
 						</div>
 					{/if}
 
