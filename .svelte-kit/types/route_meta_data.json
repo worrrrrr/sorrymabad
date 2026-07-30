@@ -1,0 +1,19 @@
+{
+	"/": [],
+	"/agents": [],
+	"/api/agents/orchestrate": [
+		"src/routes/api/agents/orchestrate/+server.ts"
+	],
+	"/api/pipeline/[id]": [
+		"src/routes/api/pipeline/[id]/+server.ts"
+	],
+	"/api/research": [
+		"src/routes/api/research/+server.ts"
+	],
+	"/api/status": [
+		"src/routes/api/status/+server.ts"
+	],
+	"/config": [],
+	"/dashboard": [],
+	"/research/[id]": []
+}

@@ -1,32 +1,4 @@
 ```
-# Dependencies
-node_modules/
-
-# SvelteKit
-.svelte-kit/
-
-# Build outputs
-.svelte-kit/cloudflare/
-.svelte-kit/output/
-
-# Environment variables
-.env*
-
-# Logs
-*.log
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-
-# IDE files
-.vscode/
-.idea/
-
-# Package manager
-package-lock.json
+# Configuration
+wrangler.jsonc
 ```
